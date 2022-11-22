@@ -1,0 +1,28 @@
+{
+  "author": "Corno",
+  "bin": {},
+  "files": [
+    "dist",
+    "data"
+  ],
+  "keywords": [],
+  "main": "./dist/index.js",
+  "bugs": {
+    "url": "https://github.com/corno/astn/issues"
+  },
+  "description": "glossary for tokenizer related types",
+  "homepage": "https://github.com/corno/astn#readme",
+  "license": "ISC",
+  "name": "glo-astn-tokenconsumer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corno/glo-astn-tokenconsumer.git"
+  },
+  "types": "dist/index.d.ts",
+  "version": "0.1.0",
+  "dependencies": {
+    "pareto-core-types": "^0.6.0"
+  },
+  "interface-fingerprint": "46f6c321caa0a3d1684e75bf50a7acc6f5748aff",
+  "content-fingerprint": "a3fabb0bb4b30eede07a5f61910d57eab0e46d25"
+}
