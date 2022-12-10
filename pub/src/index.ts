@@ -1,1 +1,2 @@
-export * from "./interface"
+export * from "./algorithms.p"
+export * from "./types.p"
