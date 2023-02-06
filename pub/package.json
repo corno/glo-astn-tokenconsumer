@@ -1,8 +1,7 @@
 {
-  "name": "glo-pareto-common",
   "author": "Corno",
   "license": "ISC",
-  "description": "common types and functions for Pareto",
+  "description": "the token consumer API. Allows the parser to consume from other sources than the tokenizer",
 
   "dependencies": {
     "pareto-core-types": "^0.10.0"
@@ -11,10 +10,8 @@
     "dist"
   ],
   "repository": {
-    "type": "git",
-    "url": "http://github.com/corno/glo-pareto-common.git"
+    "type": "git"
   },
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "version": "0.0.0"
+  "types": "dist/index.d.ts"
 }

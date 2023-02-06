@@ -7,10 +7,8 @@ const d = pr.wrapRawDictionary
 import { $ as glossary } from "./glossary.data"
 
 export const $: mproject.TProject = {
-    'name': "glo-pareto-common",
-
     'author': "Corno",
-    'description': "common types and functions for Pareto",
+    'description': "the token consumer API. Allows the parser to consume from other sources than the tokenizer",
     'license': "ISC",
 
     'pubdependencies': d({}),
