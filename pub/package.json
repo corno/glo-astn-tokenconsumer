@@ -4,7 +4,7 @@
   "description": "the token consumer API. Allows the parser to consume from other sources than the tokenizer",
 
   "dependencies": {
-    "pareto-core-types": "^0.0.0"
+    "pareto-core-types": "^0.10.0"
   },
   "files": [
     "dist"
