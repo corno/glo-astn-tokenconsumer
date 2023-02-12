@@ -2,7 +2,6 @@
   "author": "Corno",
   "license": "ISC",
   "description": "the token consumer API. Allows the parser to consume from other sources than the tokenizer",
-
   "dependencies": {
     "pareto-core-types": "^0.10.0"
   },
@@ -10,8 +9,12 @@
     "dist"
   ],
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "http://github.com/corno/glo-astn-tokenconsumer.git"
   },
   "main": "dist/index.js",
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "name": "glo-astn-tokenconsumer",
+  "version": "0.3.0",
+  "content-fingerprint": "5f8febbf9e46b2686d500762140c325d8109926e"
 }
