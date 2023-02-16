@@ -11,7 +11,7 @@ export const $: mproject.T.Project = {
     'description': "the token consumer API. Allows the parser to consume from other sources than the tokenizer",
     'license': "ISC",
 
-    'pubdependencies': d({}),
+    'dependencies': d({}),
     'type': ['glossary', {
         'glossary': glossary
     }],
