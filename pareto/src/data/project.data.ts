@@ -9,7 +9,7 @@ import { $ as glossary } from "./glossary.data"
 export const $: gproject.T.Project<pd.SourceLocation> = {
     'author': "Corno",
     'description': "the token consumer API. Allows the parser to consume from other sources than the tokenizer",
-    'license': "ISC",
+    'license': "TBD",
 
     'dependencies': d({}),
     'type': ['glossary', {
