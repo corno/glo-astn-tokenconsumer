@@ -15,7 +15,7 @@ import {
     member,
     reference,
     array,
-    method,
+    interfaceMethod,
     type,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
@@ -67,11 +67,13 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
         })),
 
     }),
+    'builders': d({
+    }),
     'interfaces': d({
         "TokenConsumer": ['group', {
             'members': d({
-                "onToken": method(typeReference("AnnotatedToken")),
-                "onEnd": method(typeReference("EndAnnotation")), //should be a parameter reference
+                "onToken": interfaceMethod(typeReference("AnnotatedToken")),
+                "onEnd": interfaceMethod(typeReference("EndAnnotation")), //should be a parameter reference
             })
         }]
     }),
