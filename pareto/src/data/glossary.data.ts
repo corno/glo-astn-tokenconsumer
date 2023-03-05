@@ -31,17 +31,17 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
         "EndAnnotation": type(glossaryParameter("Annotation")),
         "AnnotatedToken": type(group({
             "token": member(reference("Token")),
-            "annotation": member(glossaryParameter("Annotation"))
+            "annotation": member(glossaryParameter("Annotation")),
         })),
         "MultilineStringData": type(group({
-            "lines": member(array(string()))
+            "lines": member(array(string())),
         })),
         "SimpleStringData": type(group({
             "wrapping": member(reference("Wrapping")),
             "value": member(string()),
         })),
         "StructuralTokenData": type(group({
-            "type": member(reference("StructuralTokenType"))
+            "type": member(reference("StructuralTokenType")),
         })),
         "StructuralTokenType": type(taggedUnion({
             "tagged union start": group({}),
@@ -70,11 +70,9 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
     'builders': d({
     }),
     'interfaces': d({
-        "TokenConsumer": ['group', {
-            'members': d({
-                "onToken": interfaceMethod(typeReference("AnnotatedToken")),
-                "onEnd": interfaceMethod(typeReference("EndAnnotation")), //should be a parameter reference
-            })
+        "TokenConsumer": ['stream', {
+            'data': interfaceMethod(typeReference("AnnotatedToken")),
+            'end': interfaceMethod(typeReference("EndAnnotation")), //should be a parameter reference
         }]
     }),
     'functions': d({
