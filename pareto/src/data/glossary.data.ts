@@ -17,6 +17,7 @@ import {
     array,
     interfaceMethod,
     type,
+    stream,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as gglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -70,10 +71,10 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
     'builders': d({
     }),
     'interfaces': d({
-        "TokenConsumer": ['stream', {
-            'data': interfaceMethod(typeReference("AnnotatedToken")),
-            'end': interfaceMethod(typeReference("EndAnnotation")), //should be a parameter reference
-        }]
+        "TokenConsumer": stream(
+            interfaceMethod(typeReference("AnnotatedToken")),
+            interfaceMethod(typeReference("EndAnnotation")), //should be a parameter reference
+        )
     }),
     'functions': d({
     }),
