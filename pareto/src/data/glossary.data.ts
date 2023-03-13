@@ -11,38 +11,38 @@ import {
     taggedUnion,
     glossaryParameter,
     group,
-    func,
     member,
-    reference,
     array,
     interfaceMethod,
     type,
     stream,
+    ref,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
-import * as gglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
+import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
 
 const d = pd.d
 
-export const $: gglossary.T.Glossary<pd.SourceLocation> = {
+export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'parameters': d({
         "Annotation": null,
     }),
+    'imports': d({}),
     'types': d({
         "EndAnnotation": type(glossaryParameter("Annotation")),
         "AnnotatedToken": type(group({
-            "token": member(reference("Token")),
+            "token": member(ref(typeReference("Token"))),
             "annotation": member(glossaryParameter("Annotation")),
         })),
         "MultilineStringData": type(group({
             "lines": member(array(string())),
         })),
         "SimpleStringData": type(group({
-            "wrapping": member(reference("Wrapping")),
+            "wrapping": member(ref(typeReference("Wrapping"))),
             "value": member(string()),
         })),
         "StructuralTokenData": type(group({
-            "type": member(reference("StructuralTokenType")),
+            "type": member(ref(typeReference("StructuralTokenType"))),
         })),
         "StructuralTokenType": type(taggedUnion({
             "tagged union start": group({}),
@@ -57,9 +57,9 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
         })),
         "Token": type(taggedUnion({
             "header start": group({}),
-            "structural": reference("StructuralTokenData"),
-            "simple string": reference("SimpleStringData"),
-            "multiline string": reference("MultilineStringData"),
+            "structural": ref(typeReference("StructuralTokenData")),
+            "simple string": ref(typeReference("SimpleStringData")),
+            "multiline string": ref(typeReference("MultilineStringData")),
         })),
         "Wrapping": type(taggedUnion({
             "quote": group({}),
@@ -68,14 +68,13 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
         })),
 
     }),
-    'builders': d({
-    }),
-    'interfaces': d({
-        "TokenConsumer": stream(
-            interfaceMethod(typeReference("AnnotatedToken")),
-            interfaceMethod(typeReference("EndAnnotation")), //should be a parameter reference
-        )
-    }),
-    'functions': d({
-    }),
+    'type': ['asynchronous', {
+        'interfaces': d({
+            "TokenConsumer": stream(
+                interfaceMethod(typeReference("AnnotatedToken")),
+                interfaceMethod(typeReference("EndAnnotation")), //should be a parameter ref(typeReference
+            )
+        }),
+        'functions': d<g_glossary.T.Glossary._ltype.asynchronous.functions.D<pd.SourceLocation>>({}),
+    }],
 }
