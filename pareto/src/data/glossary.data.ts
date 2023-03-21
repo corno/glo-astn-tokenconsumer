@@ -9,7 +9,7 @@ import {
     member,
     array,
     type,
-    stream,
+    streamconsumer,
     ref,
     aInterfaceMethod,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
@@ -65,7 +65,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     }),
     'asynchronous': {
         'interfaces': d({
-            "TokenConsumer": stream(
+            "TokenConsumer": streamconsumer(
                 aInterfaceMethod(typeReference("AnnotatedToken")),
                 aInterfaceMethod(typeReference("EndAnnotation")), //should be a parameter ref(typeReference
             )
