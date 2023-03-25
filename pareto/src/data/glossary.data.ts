@@ -12,6 +12,7 @@ import {
     streamconsumer,
     ref,
     aInterfaceMethod,
+    aInterface,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -24,10 +25,10 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     }),
     'imports': d({}),
     'types': d({
-        "EndAnnotation": type(glossaryParameter("Annotation")),
+        "EndAnnotation": type(ref(glossaryParameter("Annotation"))),
         "AnnotatedToken": type(group({
             "token": member(ref(typeReference("Token"))),
-            "annotation": member(glossaryParameter("Annotation")),
+            "annotation": member(ref(glossaryParameter("Annotation"))),
         })),
         "MultilineStringData": type(group({
             "lines": member(array(string())),
@@ -65,18 +66,18 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     }),
     'asynchronous': {
         'interfaces': d({
-            "TokenConsumer": streamconsumer(
+            "TokenConsumer": aInterface(streamconsumer(
                 aInterfaceMethod(typeReference("AnnotatedToken")),
                 aInterfaceMethod(typeReference("EndAnnotation")), //should be a parameter ref(typeReference
-            )
+            )),
 
         }),
         'algorithms': d({}),
-        
+
     },
     'synchronous': {
-        'interfaces': d({ }),
+        'interfaces': d({}),
         'algorithms': d({}),
-        
+
     },
 }
