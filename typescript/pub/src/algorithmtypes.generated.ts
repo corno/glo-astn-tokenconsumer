@@ -7,9 +7,9 @@ export namespace ASYNC {
     
     export namespace I {
         
-        export type TokenConsumer<GAnnotation> = {
-            'data': ($: T.AnnotatedToken<GAnnotation>, ) => void
-            'end': ($: T.EndAnnotation<GAnnotation>, ) => void
+        export type TokenConsumer<TAnnotation> = {
+            'data': ($: T.AnnotatedToken<TAnnotation>, ) => void
+            'end': ($: TAnnotation, ) => void
         }
     }
     

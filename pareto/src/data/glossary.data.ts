@@ -13,6 +13,8 @@ import {
     ref,
     aInterfaceMethod,
     aInterface,
+    typeParameter,
+    parametrizedType,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -21,16 +23,14 @@ const d = pd.d
 
 export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'parameters': d({
-        "Annotation": null,
     }),
     'imports': d({}),
     'root': {
         'namespaces': d({}),
         'types': d({
-            "EndAnnotation": type(ref(glossaryParameter("Annotation"))),
-            "AnnotatedToken": type(group({
+            "AnnotatedToken": parametrizedType({ "Annotation": null }, group({
                 "token": member(ref(typeReference("Token"))),
-                "annotation": member(ref(glossaryParameter("Annotation"))),
+                "annotation": member(ref(typeParameter("Annotation"))),
             })),
             "MultilineStringData": type(group({
                 "lines": member(array(string())),
@@ -70,17 +70,15 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'asynchronous': {
         'interfaces': d({
             "TokenConsumer": aInterface(streamconsumer(
-                aInterfaceMethod(typeReference("AnnotatedToken")),
-                aInterfaceMethod(typeReference("EndAnnotation")), //should be a parameter ref(typeReference
-            )),
+                aInterfaceMethod(typeReference("AnnotatedToken", { "Annotation": typeParameter("Annotation") })),
+                aInterfaceMethod(typeParameter("Annotation")), //should be a parameter ref(typeReference
+            ), { "Annotation": null }),
 
         }),
         'algorithms': d({}),
-
     },
     'synchronous': {
         'interfaces': d({}),
         'algorithms': d({}),
-
     },
 }
